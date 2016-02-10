@@ -1,11 +1,8 @@
 {
-  "name": "it-ebooks",
+  "name": "ionic-symcomb",
   "version": "1.0.0",
   "description": "Simple Guessing Game with Ionic",
   "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "Milan Ravilic",
   "license": "ISC",
   "dependencies": {
