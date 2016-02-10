@@ -1,0 +1,96 @@
+<ion-view view-title="Play SymComb">
+    <ion-content id="main" class="padding">
+		<div class="row">
+			<div class="col">
+				<h4>Combos</h4>
+				<br>
+				<ul class="cells" id="combo-list">
+					<li ng-repeat="comb in listOfCombinations" class="row-{{$index}}">
+						<span ng-repeat="s in comb.sub track by $index" class="cell cell-{{$index}}"></span>
+					</li>
+				</ul>
+			</div>
+			<div class="col">
+				<h4>Hits</h4>
+				<br>
+				<ul class="cells" id="match-list">
+					<li ng-repeat="hit in listOfHits">
+						<span class="cell" ng-repeat="b in hit.sub track by $index" ng-class="{'empty': b == 0, 'direct-hit': b == 2, 'indirect-hit': b == 1}"></span>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="clear-fix"></div>
+		<hr>
+		<div class="clear-fix"></div>
+
+		<div class="row">
+			<div class="col">
+				<h6>Current Combo:</h6>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col">
+				<div class="images-list">
+					<div>
+						<span class="image-holder" ng-repeat="img in imagesList track by $index" ng-click="removeFromList($index)">
+		 					<img ng-src="/img/{{img}}.svg" alt="{{img}}">
+		 				</span>
+		 			</div> 
+				</div>
+			</div>
+			<div class="col">
+				<button ng-if="imagesList.length == 4" class="button button-balanced" ng-click="play()">
+					Go
+				</button>
+				&nbsp;
+				<button ng-if="imagesList.length > 0" class="button button-assertive" ng-click="clear()">
+					Clear
+				</button>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col">
+				<h6>Available Symbols:</h6>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col text-center">
+				<div class="images-btns">
+					<span class="image-btn" ng-repeat="img in images" ng-click="addToList(img, $index)">
+						<img ng-src="/img/{{img}}.svg" alt="{{img}}">
+					</span> &nbsp;
+				</div>
+			</div>
+		</div>
+	</ion-content>
+
+	<script id="modal-dialog" type="text/ng-template">
+		<ion-modal-view class="padding">
+			<ion-header-bar class="bar bar-header bar-balanced">
+				<h1 class="title">Game Over</h1>
+			</ion-header-bar>
+			<ion-content id="modal-wrapper">
+				<h3 class="text-center">{{msg}}</h3>
+				<br/>
+				<div ng-show="answer" class="images-list text-center">
+					<div>
+						<span class="image-holder" ng-repeat="img in answer track by $index">
+		 					<img ng-src="/img/{{img}}.svg" alt="{{img}}">
+		 				</span>
+		 			</div>
+		 			<br/>
+				</div>
+				<button ng-click="startNewGame(); closeModal()" class="button button-positive button-block">
+					Play Again
+				</button>
+			</ion-content>
+		</ion-modal-view>
+	</script>
+
+
+</ion-view>

@@ -1,0 +1,47 @@
+<ion-view view-title="About SymComb">
+    <ion-content class="padding">
+		<div class="row">
+			<div class="col">
+				<h2>Rules:</h2>
+				<hr>
+				<p>Objective of this game is to guess the hidden combination of symbols. </p>
+				<p>The combination consists from 4 randomly chosen symbols from the set of 6 established symbols. Which are:</p>
+			</div>
+		</div>
+
+		<div class="row">
+			<div id="about-images" class="col text-center">
+				<img ng-src="/img/spades.svg" alt="spades">
+				<img ng-src="/img/hearts.svg" alt="hearts">
+				<img ng-src="/img/diamonds.svg" alt="diamonds">
+				<img ng-src="/img/clubs.svg" alt="clubs">
+				<img ng-src="/img/star.svg" alt="star">
+				<img ng-src="/img/target.svg" alt="spades">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col">
+				<p>The player has 6 attempts to guess the hidden combination using the symbols above.</p>
+				<p>If the player can't guess the hidden combination the game is lost and it will be revealed with the message. Otherwise the game is won.</p>
+				<p>Do note that these are combinations with repeating. Which means each symbol can be repeated in combination maximum 4 times. Therefore the total number of combinations is 4096.</p>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col">
+				<h3>How is it played:</h3>
+				<p>1. The player enters a combination in the designated area. The player can delete symbols from his/hers current combination with a press of a button.</p>
+				<p>2. Once the player eneters a 4 symbols hits the Go button, the combination is being listed in list of all combinations and it is compared against the hidden combination.</p>
+				<p>3. Depending on the result of this comparison, this list beside combinations list is populated with appropriet colors. Red for direct hit, yellow for inderict hit (which means the symbol is in the hidden combination but it is at wrong spot) and gray for a miss.</p>
+				<p>4. The player repeats this process maximum 5 times.</p>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col">
+				<h5>And that is it. Enjoy the game.</h5>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>
